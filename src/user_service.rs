@@ -1,4 +1,5 @@
-#[derive(clone)]
+use async_graphql::{Object, ID};
+#[derive(Clone)]
 pub struct User {
     pub id: ID,
     pub name: String,
@@ -15,19 +16,27 @@ impl User {
         &self.id
     }
 
-    async fn id(&self) -> &str {
-        &self.id
+    async fn name(&self) -> &str {
+        &self.name
     }
 
-    async fn id(&self) -> &str {
-        &self.id
+    async fn email(&self) -> &str {
+        &self.email
     }
 
-    async fn id(&self) -> &str {
-        &self.id
+    async fn phone(&self) -> &str {
+        &self.phone
     }
 
-    async fn id(&self) -> &str {
-        &self.id
+    async fn address(&self) -> &str {
+        &self.address
+    }
+
+    async fn city(&self) -> &str {
+        &self.city
+    }
+
+    async fn organization(&self) -> &str {
+        &self.organization
     }
 }

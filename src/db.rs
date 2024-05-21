@@ -4,7 +4,7 @@ use async_graphql::ID;
 pub struct DB;
 
 impl DB {
-    pub fn get_dat(&self) -> Vec<User> {
+    pub fn get_data(&self) -> Vec<User> {
         vec![
             User {
                 id: ID::from("1"),
@@ -16,7 +16,7 @@ impl DB {
                 organization: String::from("LLC Company"),
             },
             User {
-                id: ID::from("3"),
+                id: ID::from("2"),
                 name: String::from("Julia"),
                 email: String::from("julia.julia@gmail.com"),
                 phone: String::from("113-555-7890"),
@@ -25,7 +25,7 @@ impl DB {
                 organization: String::from("Farms"),
             },
             User {
-                id: ID::from("4"),
+                id: ID::from("3"),
                 name: String::from("Bernardo"),
                 email: String::from("bern.dos@gmail.com"),
                 phone: String::from("123-250-0000"),
