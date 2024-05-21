@@ -6,10 +6,10 @@ mod db;
 mod query_engine;
 mod user_service;
 
-use db::DB; // Importando DB
+use db::DB; // Import DB
 
 async fn graphql_handler(graphql_request: GraphQLRequest) -> GraphQLResponse {
-    let query = query_engine::Query { db: DB }; // Criando uma instância de Query
+    let query = query_engine::Query { db: DB }; // Creating an Query Instance
 
     let schema = Schema::new(query, EmptyMutation, EmptySubscription);
 
@@ -20,7 +20,7 @@ async fn graphql_handler(graphql_request: GraphQLRequest) -> GraphQLResponse {
 
 #[tokio::main]
 async fn main() {
-    // Nossa API GraphQL em Rust
+    // Our API GraphQL in Rust
     let app = Router::new().route("/gql", post(graphql_handler));
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
